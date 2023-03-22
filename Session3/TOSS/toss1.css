@@ -1,0 +1,215 @@
+body {
+  height: 800px;
+  width: 360px;
+  margin: 10px auto;
+}
+.total_container {
+  height: 100%;
+  width: 100%;
+  flex: nowrap;
+  overflow-x: auto;
+  flex-direction: row;
+  background-color: rgb(242, 242, 242);
+}
+
+.top_container {
+  display: flex;
+  width: 360px;
+  height: 50px;
+}
+
+.top_left {
+  display: flex;
+  width: 180px;
+  justify-content: flex-start;
+}
+
+.top_right {
+  display: flex;
+  width: 180px;
+  justify-content: flex-end;
+}
+
+.logo {
+  display: flex;
+  width: 80px;
+  height: 30px;
+  margin: 18px 10px;
+}
+
+.toplogo {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  margin: 15px 10px;
+}
+
+.naver_container {
+  margin-left: 10px;
+  border-radius: 10px;
+  background-color: white;
+  margin-top: 20px;
+  width: 340px;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.lefty {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.righty {
+  width: 10%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.naver_logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+}
+
+.naver_description {
+  margin-left: 15px;
+  font-size: 15px;
+  width: 240px;
+  height: 30px;
+}
+
+.arrow {
+  width: 10px;
+  height: 10px;
+}
+
+.toss_container {
+  margin-left: 10px;
+  border-radius: 10px;
+  background-color: white;
+  margin-top: 20px;
+  width: 340px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.toss_description {
+  margin-left: 10px;
+  margin-right: 234px;
+  font-size: 20px;
+}
+
+.balance_container {
+  margin-left: 10px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  background-color: white;
+  margin-top: 20px;
+  width: 340px;
+  height: 400px;
+}
+
+.balance_topbox {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  align-items: center;
+}
+
+.balance_description {
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 273px;
+}
+
+.logos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-right: 20px;
+  height: 350px;
+}
+
+.name_balance {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 350px;
+}
+.account_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.kb_logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+.sinhan_logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+.hana_logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+.woori_logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+.send_button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 50px;
+  height: 150px;
+}
+
+.sticky_container {
+  width: 360px;
+  height: 100px;
+  background-color: white;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+.expenditure_container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.expenditure_description {
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 240px;
+}
+.navigation_container {
+  width: 360px;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  margin-top: 12px;
+  width: 50px;
+  height: 25px;
+  border-color: azure;
+  border-radius: 10px;
+}
