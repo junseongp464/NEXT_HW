@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/info.css'%}" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSPAGE</title>
+    <body style="background-color: black" />
+  </head>
+  <body>
+    <div class="title">
+      <h1>
+        <a href="{% url 'info' %}">info   /</a>
+        <a href="{% url 'project' %}">/   project</a></div>
+      </h1>
+    <div class="description">
+      <h2>
+        <span style="font-size:50px">Hello, it's me<br /></span>
+        Junseong Park.
+      </h2>
+    </div>
+
+    <img class="pic", src="{% static 'image/laos.jpg'%}"/>
+
+    <div class="box">
+      <p> I am an enthusiast and an explorer, currently on the journey of entrepreneurship. <br>
+        A high-achiever with ambitious goals, striving to craft a better "tomorrow". <br>
+        A problem-solver who tends to think in a positive solution-oriented way. <br>
+        A product manager with various product planning experiences. <br> <br>
+
+        Please feel free to contact me via 010-4952-9903 for a coffee chat!
+        <p>
+    </div>
+  </body>
+</html>
