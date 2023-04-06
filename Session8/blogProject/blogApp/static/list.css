@@ -1,0 +1,56 @@
+body {
+  text-align: center;
+  font-family: "Dongle", sans-serif;
+  background-color: rgb(108, 97, 189);
+}
+
+h2 {
+  font-size: 60px;
+  align-items: center;
+}
+
+a {
+  color: white;
+  font-size: 50px;
+}
+
+.container {
+  border-color: red #32a1ce;
+  background-color: rgb(0, 0, 0);
+  height: 500px;
+  width: 1200px;
+  position: relative;
+  top: 50px;
+  left: 250px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.back {
+  margin-top: 200px;
+}
+
+.startup_box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+}
+
+.hobby_box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.programming_box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

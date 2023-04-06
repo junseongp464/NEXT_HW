@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'new.css'%}" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>New Article</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap");
+    </style>
+  </head>
+  <body>
+    <form action="/new" method="post">
+      {% csrf_token %}
+    <h2>준성's 끄적끄적,<br>
+      그냥 이것저것
+    </h2>
+      <div>제목</div>
+        <input type="text" name="title" />
+      </div>
+      <div>카테고리</div>
+        <select name="category">
+          <option value="startup">Start Up</option>
+          <option value="hobby">Hobby</option>
+          <option value="programming">Programming</option>
+        </select>
+      <div>
+        <div>내용</div>
+        <textarea name="content" cols="100" rows="20"></textarea>
+      </div>
+      <button type="submit">Send!</button>
+    </form>
+  </body>
+</html>

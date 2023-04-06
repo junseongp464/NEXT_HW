@@ -1,0 +1,21 @@
+body {
+  font-size: 30px;
+  font-family: "Dongle", sans-serif;
+  background-color: rgb(108, 97, 189);
+}
+
+a {
+  color: white;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+.container {
+  background-color: white;
+  height: 300px;
+  width: 1700px;
+  display: flex;
+  justify-content: space-around;
+}

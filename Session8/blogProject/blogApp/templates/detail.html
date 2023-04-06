@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article</title>
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'detail.css'%}" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap");
+    </style>
+  </head>
+  <body>
+    <h2>글 상세 페이지</h2>
+    <div class="container">
+      <div class="title">
+        <h3>제목</h3>
+        <p>{{ article.title }}</p>
+      </div>
+      <div class="category">
+        <h3>카테고리</h3>
+        <p>{{ article.category }}</p>
+      </div>
+      <div class="content">
+        <h3>내용</h3>
+        <p>{{ article.content }}</p>
+      </div>
+      <div class="time">
+        <h3>작성시간</h3>
+        <p>{{ article.time}}</p>
+      </div>
+    </div>
+    <a href="{% url 'list' %}">전체 목록으로 돌아가기</a>
+  </body>
+</html>

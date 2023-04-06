@@ -1,0 +1,16 @@
+body {
+  background-color: rgb(108, 97, 189);
+  text-align: center;
+  font-family: "Dongle", sans-serif;
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 80px;
+  font-style: white;
+}
+
+.box {
+  align-items: center;
+  display: flex;
+}
