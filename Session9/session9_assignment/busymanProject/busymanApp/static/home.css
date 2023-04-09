@@ -1,0 +1,43 @@
+body {
+  background-color: #000000;
+  font-family: Arial, sans-serif;
+  font-weight: 900;
+}
+
+h1 {
+  color: #ffffff;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+li {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px #000000;
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bold;
+}
+
+a {
+  color: #6b4587;
+  text-decoration: none;
+  font: 30px;
+  text-align: center;
+}
+
+.letsgo-container {
+  position: relative;
+  text-align: center;
+}
+
+a#add-post {
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+  font: 50px;
+}

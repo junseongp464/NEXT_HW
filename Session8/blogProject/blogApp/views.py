@@ -18,6 +18,7 @@ def new(request):
 
 
 def list(request):
+    articles = Article.objects.all()
     startups = Article.objects.filter(category='startup')
     startups_len = len(startups)
 

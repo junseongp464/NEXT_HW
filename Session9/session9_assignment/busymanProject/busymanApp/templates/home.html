@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Document</title>
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'home.css' %}" />
+  </head>
+  <body>
+    <h1>뭐해? 또 미룰려고?</h1>
+    <div>
+      <ul>
+        {% for post in posts %}
+        <li>
+          <a href="{% url 'detail' post.pk %}">{{ post.title }}</a>
+          <p>마감일이 {{ post.deadline }}이라니...</p>
+          <p>{{ post.days_left }}일밖에 안 남았어!</p>
+        </li>
+
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="letsgo-container">
+      <a id="add-post" href="{% url 'new' %}">새로운 글 작성</a>
+      <img class="letsgo" src="/static/images/letsgo.jpg" />
+    </div>
+  </body>
+</html>
