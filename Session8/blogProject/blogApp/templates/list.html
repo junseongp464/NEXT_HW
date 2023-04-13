@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% extends 'base.html' %}{% block content %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -36,4 +37,5 @@
     </div>
     <a class="back" href="{% url 'new'%}">글 쓰러 가기</a>
   </body>
+  {% endblock %}
 </html>

@@ -1,6 +1,15 @@
 <!DOCTYPE html>
+{% extends 'base.html' %} {% block content %}
 <html lang="en">
   <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".reply-link").click(function () {
+          $(this).next(".reply-form-container").toggle();
+        });
+      });
+    </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,9 +37,55 @@
       </div>
       <div class="time">
         <h3>작성시간</h3>
-        <p>{{ article.time}}</p>
+        <p>{{article.time}}</p>
       </div>
     </div>
+    <h3>댓글 달기</h3>
+    <!-- Display comments form -->
+    <form method="post">
+      {% csrf_token %}
+      <div>
+        <label for="author">작성자:</label>
+        <input type="text" name="author" id="author" required />
+      </div>
+      <div>
+        <label for="body">댓글:</label>
+        <textarea name="body" id="body" required></textarea>
+      </div>
+      <button type="submit">댓글</button>
+    </form>
+
+    <!-- Display list of comments -->
+    <h3>댓글 목록</h3>
+    {% for comment in comments %}
+    <div class="comment">
+      <p>{{ comment.author }}님의 댓글</p>
+      <p>{{ comment.body }}</p>
+      <p>작성시간: {{comment.created_date|date:"Y-m-d H:i:s"}}</p>
+      <a href="#" class="reply-link">Reply</a>
+      <div class="reply-form-container">
+        <form class="reply-form">
+          <div>
+            <label for="author">작성자:</label>
+            <input type="text" name="author" class="reply-author" required />
+          </div>
+          <div>
+            <label for="body">답글:</label>
+            <textarea name="body" class="reply-body" required></textarea>
+          </div>
+          <button type="submit" class="reply-submit">Add Reply</button>
+        </form>
+      </div>
+      {% for reply in comment.replies.all %}
+      <div class="reply">
+        <p>{{ reply.author }}님의 댓글</p>
+        <p>{{ reply.body }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+
     <a href="{% url 'list' %}">전체 목록으로 돌아가기</a>
   </body>
 </html>
+{%endblock%}

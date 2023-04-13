@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Article
+from .models import Article, Comment, Reply
 
 # Create your views here.
 def new(request):
@@ -32,7 +32,29 @@ def list(request):
     
 def detail(request, article_id):
     article = Article.objects.get(id=article_id)
-    return render(request, 'detail.html', {'article':article})
+    comments = Comment.objects.filter(article=article).order_by('-created_date')
+    replies = Reply.objects.filter(comment__article=article)
+    if request.method == 'POST':
+        
+        author = request.POST.get('author', '').strip()
+        body = request.POST.get('body', '').strip()
+        if author and body:
+            comment = Comment(author=author, body=body, article=article)
+            comment.save()
+            return redirect('detail', article_id=article_id)
+        
+        # Handle reply form submission
+    elif request.POST.get('comment_id'):
+        parent_comment = Comment.objects.get(id=request.POST.get('comment_id'))
+        author = request.POST.get('reply_author', '').strip()
+        body = request.POST.get('reply_body', '').strip()
+        if author and body:
+                reply = Comment(author=author, body=body, article=article, parent=parent_comment)
+                reply.save()
+                return redirect('detail', article_id=article_id)
+            
+    return render(request, 'detail.html', {'article': article, 'comments': comments})
+
 
 def category(request, category):
     articles = Article.objects.filter(category=category)
