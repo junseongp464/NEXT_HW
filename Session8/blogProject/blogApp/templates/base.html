@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <title></title>
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'base.css'%}" />
   </head>
   <body>
     <header></header>
     {% block content %}{% endblock %}
     <footer>
-      <div class="container">
-        <div class="contact">
-          <h3>Contact me:</h3>
-          <p>junseongp464@naver.com</p>
-        </div>
+      <div class="contact">
+        <h3>Contact me:</h3>
+        <p>junseongp464@naver.com</p>
       </div>
     </footer>
   </body>
