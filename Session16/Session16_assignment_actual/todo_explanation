@@ -1,0 +1,56 @@
+// Get references to the HTML elements
+const todoForm = document.getElementById("todo-form"); // Get the form element with the ID "todo-form"
+const todoList = document.getElementById("todo-list"); // Get the list element with the ID "todo-list"
+const submitBtn = document.querySelector(".submitBtn"); // Get the submit button element with the class "submitBtn"
+
+// Declare an empty array to store todos
+let todos = []; // Create an empty list to store the todo items
+
+// Function to handle form submission
+function submitAddTodo(event) {
+  event.preventDefault(); // Prevent the form from being submitted and the page from refreshing
+  const content = document.getElementById("content"); // Get the input element with the ID "content"
+  const newTodo = content.value; // Get the value entered in the input field
+  todos.push(newTodo); // Add the new todo to the list of todos
+  window.localStorage.setItem("todo", JSON.stringify(todos)); // Store the list of todos in the browser's local storage
+  content.value = ""; // Clear the input field
+  paintTodo(); // Update the todo list on the page
+}
+
+// Function to render the todo list
+function paintTodo() {
+  todoList.innerHTML = ""; // Clear the existing todo list
+  todos.forEach((todo, index) => {
+    // Loop through each todo item in the list
+    const listItem = document.createElement("li"); // Create a new list item element
+    listItem.textContent = todo; // Set the text content of the list item to the todo item
+    listItem.id = "todo-" + index; // Set a unique ID for the list item
+
+    const deleteButton = document.createElement("button"); // Create a new button element
+    deleteButton.textContent = "Delete"; // Set the text content of the button to "Delete"
+    deleteButton.addEventListener("click", deleteTodo); // Add a click event listener to the delete button
+    listItem.appendChild(deleteButton); // Add the delete button to the list item
+
+    todoList.appendChild(listItem); // Add the list item to the todo list on the page
+  });
+}
+
+// Function to handle todo deletion
+function deleteTodo(event) {
+  const deleteButton = event.target; // Get the delete button that was clicked
+  const listItem = deleteButton.parentNode; // Get the parent list item of the delete button
+  const todoId = listItem.id.split("-")[1]; // Extract the ID of the todo item from the list item ID
+  todos.splice(todoId, 1); // Remove the todo item from the list of todos
+  window.localStorage.setItem("todo", JSON.stringify(todos)); // Update the list of todos in local storage
+  listItem.remove(); // Remove the list item from the todo list on the page
+}
+
+// Add an event listener to the form element for the submit event
+todoForm.addEventListener("submit", submitAddTodo);
+
+// Load todos from local storage on page load
+const storedTodos = JSON.parse(window.localStorage.getItem("todo"));
+if (Array.isArray(storedTodos)) {
+  todos = storedTodos; // Retrieve the stored todos from local storage
+  paintTodo(); // Update the todo list on the page
+}
